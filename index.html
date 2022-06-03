@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Luna web</title>
+        <link  rel="stylesheet" type="text/css" href="style.css">
+        <link
+    </head>
+    <body>
+         <header>
+            <a href="#" class="logo">Luna</a>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <img src="star.png" id="star">
+            <img src="moon.png" id="moon">
+            <img src="front.png" id="front">
+            <img src="back.png" id="back">
+            <h2 id="text">Moon Light</h2>
+            <a href="#sec" id="btn">Explore</a>
+        </section>
+        <div class="sec" id="sec">
+            <h2>Moon</h2>
+            <p>Many people believe that the Moon does not have any gravity. In fact, the Moon, like every other massive object in the Universe, attracts every other massive object gravitationally. Even subatomic particles such as protons and neutrons exert a gravitational pull on proximate objects, although it is so slight as to be negligible.
+                We use the term "surface gravity" in reference to the downward "pull" that objects experience when resting or moving on a larger body. Earth's average surface gravity is about 9.8 meters per second per second. When an object is tossed off a building top or a cliff apex, for instance, it accelerates toward the ground at 9.8 meters per second per second. The Moon's surface gravity is about 1/6th as powerful or about 1.6 meters per second per second. The Moon's surface gravity is weaker because it is far less massive than Earth. A body's surface gravity is proportional to its mass, but inversely proportional to the square of its radius.<br><br>
+                The Apollo astronauts were able to walk on the lunar surface because the Moon exerted a gravitational pull on them. Of course, the astronauts were able to leap higher on the Moon than on Earth because the Moon's surface gravity is so comparatively weak. When on Earth, a fully suited Apollo astronaut weighed about 500 pounds, equipment included. His weight was only about 80 pounds on the Moon.*
+
+                We also draw your attention to the now-famous hammer-feather drop demonstration that Apollo 15 astronaut David Scott performed on the lunar surface. He demonstrated that in a vacuum, the falcon feather and a hammer, when dropped simultaneously from the same height, reach the ground at the same time.<br><br>You will notice that the objects fall slowly, because their acceleration toward the surface is only 1/6th what it would be on Earth. Commander Scott's demonstration proved that objects of unequal mass fall at the same rate and, of course, proved that the Moon does, indeed, have gravity.<br><br>
+            </p>
+        </div>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="footer__item">
+                    <nav class="footer__nav">
+                        <ul class="footerm__menu">
+                            <li class="footer__menu-item">
+                                <h3 class="footer__menu-title">By Dmitrii Pyatakov. 2022</h3>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+        <script>
+        SmoothScroll({
+            // Время скролла 400 = 0.4 секунды
+            animationTime    : 700,
+            // Размер шага в пикселях 
+            stepSize         : 55,
+        
+            // Дополнительные настройки:
+            
+            // Ускорение 
+            accelerationDelta : 20,  
+            // Максимальное ускорение
+            accelerationMax   : 1,   
+        
+            // Поддержка клавиатуры
+            keyboardSupport   : true,  
+            // Шаг скролла стрелками на клавиатуре в пикселях
+            arrowScroll       : 50,
+        
+            // Pulse (less tweakable)
+            // ratio of "tail" to "acceleration"
+            pulseAlgorithm   : true,
+            pulseScale       : 4,
+            pulseNormalize   : 1,
+        
+            // Поддержка тачпада
+            touchpadSupport   : true,
+        })
+        </script>
+        <script>
+            let star = document.getElementById('star');
+            let moon = document.getElementById('moon');
+            let front = document.getElementById('front');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let back = document.getElementById('back');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll',function(){
+                let value = window.scrollY;
+                star.style.left = value * 0.25 +'px';
+                moon.style.top = value * 1.05 +'px';
+                back.style.top = value * 0.5 +'px';
+                front.style.top = value * 0 +'px';
+                text.style.marginRight = value * 4 +'px';
+                text.style.marginTop = value * 1.5 +'px';
+                btn.style.marginTop = value * 1.5 +'px';
+                header.style.top = value * 0.5 +'px';
+                
+            })
+        </script>
+    </body>
+</html>
